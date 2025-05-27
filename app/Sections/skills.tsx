@@ -16,33 +16,33 @@ gsap.registerPlugin(ScrollTrigger)
 const skillsData = {
   languages: [
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width={7} height={7} />,
       title: 'JavaScript'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width={7} height={7} />,
       title: 'TypeScript'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width={7} height={7} />,
       title: 'Python'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width={7} height={7} />,
       title: 'C/C++'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width={7} height={7} />,
       title: 'Java'
     },
     {
-      icon: <Image src="/Embedded C.svg" alt="Embedded C" className="w-7 h-7" />,
+      icon: <Image src="/Embedded C.svg" alt="Embedded C" width={7} height={7} />,
       title: 'Embedded C'
     }
   ],
   frontend: [
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width={7} height={7} />,
       title: 'React.js'
     },
     {
@@ -50,21 +50,21 @@ const skillsData = {
       title: 'Next.js'
     },
     {
-      icon: <Image src="/tailwind.svg" alt="Tailwind" className="w-7 h-7" />,
+      icon: <Image src="/tailwind.svg" alt="Tailwind" width={7} height={7} />,
       title: 'Tailwind CSS'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" width={7} height={7} />,
       title: 'React Native'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" alt="Svelte" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" alt="Svelte" width={7} height={7} />,
       title: 'Svelte'
     }
   ],
   backend: [
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width={7} height={7} />,
       title: 'Node.js'
     },
     {
@@ -72,21 +72,21 @@ const skillsData = {
       title: 'Express.js'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width={7} height={7} />,
       title: 'MongoDB'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width={7} height={7} />,
       title: 'PostgreSQL'
     },
     {
-      icon: <Image src="/OpenAPI.svg" alt="API" className="w-7 h-7" />,
+      icon: <Image src="/OpenAPI.svg" alt="API" width={7} height={7} />,
       title: 'OpenAPI'
     }
   ],
   tools: [
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width={7} height={7} />,
       title: 'Git'
     },
     {
@@ -94,7 +94,7 @@ const skillsData = {
       title: 'GitHub'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" className="w-7 h-7" />,
+      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" width={7} height={7} />,
       title: 'VSCode'
     },
     {
