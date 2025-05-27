@@ -1,14 +1,13 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { initGsap } from '../lib/gsap'
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 import { motion } from 'framer-motion';
-
+gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
-    initGsap()
+
     const ctx = gsap.context(() => {
       const el = ref.current!
       gsap.fromTo(
