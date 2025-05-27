@@ -36,15 +36,16 @@ export default function CursorEffect() {
     // Check if mouse is over clickable elements
     const handleElementMouseEnter = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const isClickable = 
-        target.tagName.toLowerCase() === 'a' || 
-        target.tagName.toLowerCase() === 'button' ||
-        target.closest('a') || 
-        target.closest('button') ||
-        target.getAttribute('role') === 'button' ||
-        window.getComputedStyle(target).cursor === 'pointer';
-      
-      setIsPointer(isClickable);
+      const isClickable =
+  target.tagName.toLowerCase() === 'a' ||
+  target.tagName.toLowerCase() === 'button' ||
+  !!target.closest('a') ||
+  !!target.closest('button') ||
+  target.getAttribute('role') === 'button' ||
+  window.getComputedStyle(target).cursor === 'pointer';
+
+setIsPointer(isClickable);
+
     };
     
     document.addEventListener('mousemove', moveCursor);

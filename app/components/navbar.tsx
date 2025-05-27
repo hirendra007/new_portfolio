@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { initGsap } from '../lib/gsap'
 import { Menu } from 'lucide-react'
 
 interface NavItem { label: string; href: string }
@@ -20,7 +19,7 @@ export default function Navbar() {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
-        initGsap()
+
         gsap.registerPlugin(ScrollTrigger)
 
         /** ----- helper: tween path to N-th dot ----- */
