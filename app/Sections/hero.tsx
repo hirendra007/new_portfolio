@@ -1,10 +1,9 @@
 'use client'
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { initGsap } from '../lib/gsap'
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)

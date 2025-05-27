@@ -106,15 +106,15 @@ export default function Contact() {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}>
           <h2 className="text-4xl font-semibold mb-4">
-            Let's Collaborate
+            Let&apos;s Collaborate
           </h2>
           <p className="mb-6 opacity-70">
-            Have an idea or just want to say hi? Drop me a message and let's build something amazing.
+            Have an idea or just want to say hi? Drop me a message and let&apos;s build something amazing.
           </p>
           <AnimatePresence>
             {status === 'success' && (
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="mb-4 text-green-400">
-                Thanks for your message! I'll get back to you soon.
+                Thanks for your message! I&apos;ll get back to you soon.
               </motion.p>
             )}
             {status === 'error' && (
@@ -167,7 +167,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}
           >
-            Let's Connect
+            Let&apos;s Connect
           </motion.h3>
 
           {/* Social Icons */}

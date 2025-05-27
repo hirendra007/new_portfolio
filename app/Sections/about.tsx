@@ -88,12 +88,12 @@ export default function AboutSection() {
           <MaskContainer
             revealText={
               <p className=" p-2.5 font-techno text-[1 rem] text-white ">
-                I'm a student at VIT Chennai with a strong passion for full-stack development. 
+                I&apos;m a student at VIT Chennai with a strong passion for full-stack development. 
               I love creating seamless digital experiences from front-end interfaces to powerful 
-              back-end systems. Whether it's building dynamic web apps or managing robust APIs 
-              and databases, I enjoy every layer of the stack. I'm especially excited about 
+              back-end systems. Whether it&apos;s building dynamic web apps or managing robust APIs 
+              and databases, I enjoy every layer of the stack. I&apos;m especially excited about 
               combining my full-stack skills with IoT to build smarter, interactive systems. 
-              I'm also diving into AI and machine learning to bring intelligence into my projects.
+              I&apos;m also diving into AI and machine learning to bring intelligence into my projects.
               </p>
             }
             className="h-full w-full rounded-lg overflow-visible"
@@ -101,7 +101,7 @@ export default function AboutSection() {
   // Add your SVG path here
           >
             <p className="text-lg leading-relaxed p-8 text-black  backdrop-blur-sm border border-white/10 rounded-xl">
-              When I'm not working on tech projects, I'm usually in the gym training as a powerlifter. I enjoy challenging myself physically—it keeps me focused and motivated. I also have a big interest in anime; it's something I genuinely enjoy watching in my free time. Between lifting and getting lost in a good series, I like keeping a balance between discipline and downtime.
+              When I&apos;m not working on tech projects, I&apos;m usually in the gym training as a powerlifter. I enjoy challenging myself physically—it keeps me focused and motivated. I also have a big interest in anime; it&apos;s something I genuinely enjoy watching in my free time. Between lifting and getting lost in a good series, I like keeping a balance between discipline and downtime.
             </p>
           </MaskContainer>
         </div>
