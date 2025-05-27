@@ -1,7 +1,12 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion"; // Changed from "motion/react" to "framer-motion"
 import { cn } from "@/lib/utils";
+
+interface MousePosition {
+  x: number | null;
+  y: number | null;
+}
 
 export const MaskContainer = ({
   children,
@@ -17,25 +22,29 @@ export const MaskContainer = ({
   className?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [mousePosition, setMousePosition] = useState<any>({ x: null, y: null });
-  const containerRef = useRef<any>(null);
-  const updateMousePosition = (e: any) => {
-    const rect = containerRef.current.getBoundingClientRect();
-    setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  const [mousePosition, setMousePosition] = useState<MousePosition>({ x: null, y: null });
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const updateMousePosition = (e: MouseEvent) => {
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (rect) {
+      setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    }
   };
 
   useEffect(() => {
-    containerRef.current.addEventListener("mousemove", updateMousePosition);
+    const currentContainer = containerRef.current;
+    if (currentContainer) {
+      currentContainer.addEventListener("mousemove", updateMousePosition);
+    }
     return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener(
-          "mousemove",
-          updateMousePosition,
-        );
+      if (currentContainer) {
+        currentContainer.removeEventListener("mousemove", updateMousePosition);
       }
     };
   }, []);
-  let maskSize = isHovered ? revealSize : size;
+
+  const maskSize = isHovered ? revealSize : size;
 
   return (
     <motion.div
@@ -51,8 +60,8 @@ export const MaskContainer = ({
       <motion.div
         className="absolute flex h-full w-full items-center justify-center bg-white text-6xl [mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-size:40px] dark:bg-white"
         animate={{
-          maskPosition: `${mousePosition.x - maskSize / 2}px ${
-            mousePosition.y - maskSize / 2
+          maskPosition: `${mousePosition.x !== null ? mousePosition.x - maskSize / 2 : 0}px ${
+            mousePosition.y !== null ? mousePosition.y - maskSize / 2 : 0
           }px`,
           maskSize: `${maskSize}px`,
         }}

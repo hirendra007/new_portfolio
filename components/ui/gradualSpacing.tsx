@@ -1,6 +1,6 @@
 'use client';
  
-import { AnimatePresence, motion, useInView } from 'framer-motion';
+import { AnimatePresence, motion} from 'framer-motion';
 import * as React from 'react';
  
 export function GradualSpacing({ text = 'Gradual Spacing' }: { text: string }) {
