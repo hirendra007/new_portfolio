@@ -1,7 +1,6 @@
 // Skills.tsx
 'use client'
 import { useState, useRef, useEffect } from 'react'
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion'
 import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import gsap from 'gsap'
@@ -16,101 +15,101 @@ gsap.registerPlugin(ScrollTrigger)
 const skillsData = {
   languages: [
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" className="w-7 h-7" />,
       title: 'JavaScript'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" className="w-7 h-7" />,
       title: 'TypeScript'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="w-7 h-7" />,
       title: 'Python'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" className="w-7 h-7" />,
       title: 'C/C++'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" className="w-7 h-7" />,
       title: 'Java'
     },
     {
-      icon: <Image src="/Embedded C.svg" alt="Embedded C" width={7} height={7} />,
+      icon: <img src="/Embedded C.svg" alt="Embedded C" className="w-7 h-7" />,
       title: 'Embedded C'
     }
   ],
   frontend: [
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="w-7 h-7" />,
       title: 'React.js'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" className="w-7 h-7 invert dark:invert-0" />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" className="w-7 h-7 invert dark:invert-0" />,
       title: 'Next.js'
     },
     {
-      icon: <Image src="/tailwind.svg" alt="Tailwind" width={7} height={7} />,
+      icon: <img src="/tailwind.svg" alt="Tailwind" className="w-7 h-7" />,
       title: 'Tailwind CSS'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" className="w-7 h-7" />,
       title: 'React Native'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" alt="Svelte" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" alt="Svelte" className="w-7 h-7" />,
       title: 'Svelte'
     }
   ],
   backend: [
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" className="w-7 h-7" />,
       title: 'Node.js'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" className="w-7 h-7 invert dark:invert-0" />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express.js" className="w-7 h-7 invert dark:invert-0" />,
       title: 'Express.js'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" className="w-7 h-7" />,
       title: 'MongoDB'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" className="w-7 h-7" />,
       title: 'PostgreSQL'
     },
     {
-      icon: <Image src="/OpenAPI.svg" alt="API" width={7} height={7} />,
+      icon: <img src="/OpenAPI.svg" alt="API" className="w-7 h-7" />,
       title: 'OpenAPI'
     }
   ],
   tools: [
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="w-7 h-7" />,
       title: 'Git'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="w-7 h-7 invert dark:invert-0" />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" className="w-7 h-7 invert dark:invert-0" />,
       title: 'GitHub'
     },
     {
-      icon: <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" width={7} height={7} />,
+      icon: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" className="w-7 h-7" />,
       title: 'VSCode'
     },
     {
-      icon: <Image src="/Postman.svg" alt="Postman" className="w-7 h-7 rounded-md" />,
+      icon: <img src="/Postman.svg" alt="Postman" className="w-7 h-7 rounded-md" />,
       title: 'Postman'
     },
     {
-      icon: <Image src="/Arduino.svg" alt="Arduino IDE" className="w-7 h-7 rounded-md" />,
+      icon: <img src="/Arduino.svg" alt="Arduino IDE" className="w-7 h-7 rounded-md" />,
       title: 'Arduino IDE'
     },
     {
-      icon: <Image src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Google Colab" className="w-7 h-7 rounded-md" />,
+      icon: <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Google Colab" className="w-7 h-7 rounded-md" />,
       title: 'Google Colab'
     },
     {
-      icon: <Image src="/Kaggle.svg" alt="Kaggle" className="w-7 h-7 rounded-md" />,
+      icon: <img src="/Kaggle.svg" alt="Kaggle" className="w-7 h-7 rounded-md" />,
       title: 'Kaggle'
     }
   ]
