@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Menu } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface NavItem { label: string; href: string }
 const items: NavItem[] = [
@@ -85,55 +86,59 @@ export default function Navbar() {
                 </div>
             </div>
             {/* mobile full-screen menu */}
-            <div className="lg:hidden fixed top-4 right-4 z-50 max-w-screen">
+            <div className="lg:hidden fixed top-4 right-4 z-50 max-w-screen"
+            >
                 <button
                     onClick={() => setOpen(true)}
                     className="text-xs uppercase tracking-widest m-3 my-4"
                 >
                     <Menu className='text-white'></Menu>
                 </button>
-
+<AnimatePresence>
                 {open && (
-                    <div
-                        className={`fixed inset-0 bg-black text-white z-10 max-w-screen overflow-hidden transition-all duration-1000 ease-in-out transform ${open ? 'opacity-100 scale-100' : 'opacity-0 scale-55'
-                            }`}
-                    >
-                       
+    <motion.div
+      initial={{ opacity: 0,}}
+      animate={{ opacity: 1, transition: { duration: 0.3 } }}
+      exit={{ opacity: 0, transition: { duration: 0.3} }}
+      className="lg:hidden fixed inset-0 bg-black text-white z-[60] overflow-hidden"
+    >
+      {/* Menu Content */}
+      <div className="relative z-10 flex flex-col justify-between px-6 py-8 h-full">
+        {/* Header */}
+        <div className="flex justify-between items-center">
+          <span className="text-lg uppercase tracking-wider">Hirendra</span>
+          <button
+            onClick={() => setOpen(false)}
+            className="text-xs uppercase tracking-widest"
+          >
+            Close ✕
+          </button>
+        </div>
 
-                        {/* Menu Content */}
-                        <div className="relative z-10 flex flex-col justify-between px-6 py-8 h-full">
-                            {/* Header */}
-                            <div className="flex justify-between items-center">
-                                <span className="text-lg uppercase tracking-wider">Hirendra</span>
-                                <button
-                                    onClick={() => setOpen(false)}
-                                    className="text-xs uppercase tracking-widest"
-                                >
-                                    Close ✕
-                                </button>
-                            </div>
+        {/* Nav Links */}
+        <motion.nav className="flex-1 mt-10 flex flex-col justify-center items-center gap-6"
+        initial={{ x:20,}}
+      animate={{ x:0, transition: { duration: 0.5} }}>
+          {items.map((it, index) => (
+            <Link
+              key={index}
+              href={it.href}
+              onClick={() => setOpen(false)}
+              className="text-2xl font-techno bg-gradient-to-r from-[#d4d4d4] to-[#888888] bg-clip-text text-transparent hover:from-[#ffffff] hover:to-[#c0c0c0] transition"
+            >
+              {it.label}
+            </Link>
+          ))}
+        </motion.nav>
 
-                            {/* Nav Links */}
-                            <nav className="flex-1 mt-10 flex flex-col justify-center items-center gap-6">
-                                {items.map((it, index) => (
-                                    <Link
-                                        key={index}
-                                        href={it.href}
-                                        onClick={() => setOpen(false)}
-                                        className="text-2xl font-techno bg-gradient-to-r from-[#d4d4d4] to-[#888888] bg-clip-text text-transparent hover:from-[#ffffff] hover:to-[#c0c0c0] transition"
-                                    >
-                                        {it.label}
-                                    </Link>
-                                ))}
-                            </nav>
-
-                            {/* Footer */}
-                            <footer className="py-10 text-center opacity-70 text-sm">
-                                © {new Date().getFullYear()} Hirendra — Built with Next.js & GSAP
-                            </footer>
-                        </div>
-                    </div>
-                )}
+        {/* Footer */}
+        <footer className="py-10 text-center opacity-70 text-sm">
+          © {new Date().getFullYear()} Hirendra — Built with Next.js & GSAP
+        </footer>
+      </div>
+    </motion.div>
+  )}
+  </AnimatePresence>
             </div>
 
         </>
