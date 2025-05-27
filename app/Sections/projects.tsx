@@ -28,7 +28,8 @@ export default function Projects() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  useOutsideClick(ref, () => setActive(null));
+  useOutsideClick(ref as React.RefObject<HTMLElement>, () => setActive(null));
+
 
   useEffect(() => {
     // Cards animation via GSAP ScrollTrigger
