@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa'
 import { motion } from 'framer-motion';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
   const ref = useRef<HTMLDivElement>(null)
