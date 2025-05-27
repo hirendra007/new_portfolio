@@ -32,7 +32,7 @@ export default function Home() {
       </main>
 
       <footer className="py-10 text-center  text-white/90 bg-black bottom-0 w-full">
-        © {new Date().getFullYear()} Hirendra — Built with Next.js & GSAP
+        © {new Date().getFullYear()} Hirendra — Built with Next.JS, GSAP & Framer-Motion
       </footer>
     </div>
   );

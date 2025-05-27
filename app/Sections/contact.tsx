@@ -154,7 +154,7 @@ export default function Contact() {
             <motion.button
               type="submit"
               disabled={status === 'sending'}
-              className="bg-primary text-white py-3 rounded-2xl shadow-xl hover:scale-105 transition-transform disabled:opacity-50"
+              className="bg-neutral-700 text-white py-3 rounded-2xl shadow-3xl hover:scale-105 transition-transform disabled:opacity-50"
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}
             >
